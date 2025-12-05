@@ -156,6 +156,33 @@
 </head>
 
 <body>
+    <div id="div-gpt-ad-1764905652644-0">
+        <script>
+            (function () {
+                // Ad configuration
+                var adConfig = {
+                    "type": "out-of-page",
+                    "adUnit": "/23313062945/oop-test",
+                    "divId": "div-gpt-ad-1764905652644-0",
+                    "lazyLoad": true,
+                    "targeting": {}
+                };
+
+                // Initialize AdNova if not loaded
+                window.adNovaQueue = window.adNovaQueue || [];
+                window.adNovaQueue.push(adConfig);
+
+                // Load AdNova Loader (once per page)
+                if (!window.adNovaLoaded) {
+                    window.adNovaLoaded = true;
+                    var script = document.createElement('script');
+                    script.src = 'https://storage.googleapis.com/venturo-adnova-staging/adserver/v1.0.0/adunit-loader.min.js';
+                    script.async = true;
+                    (document.head || document.documentElement).appendChild(script);
+                }
+            })();
+        </script>
+    </div>
     <div class="container">
         <div class="header">
             <h1>GAM Banner Ad Implementation</h1>
@@ -186,15 +213,6 @@
                             // Initialize AdNova if not loaded
                             window.adNovaQueue = window.adNovaQueue || [];
                             window.adNovaQueue.push(adConfig);
-
-                            // Load AdNova Loader (once per page)
-                            if (!window.adNovaLoaded) {
-                                window.adNovaLoaded = true;
-                                var script = document.createElement('script');
-                                script.src = 'https://storage.googleapis.com/venturo-adnova-staging/adserver/v1.0.0/adunit-loader.min.js';
-                                script.async = true;
-                                (document.head || document.documentElement).appendChild(script);
-                            }
                         })();
                     </script>
                 </div>
