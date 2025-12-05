@@ -16,7 +16,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 40px 20px;
+            padding: 40px 0px;
         }
 
         .container {
@@ -143,10 +143,10 @@
     </style>
 </head>
 
-<body>
+<body style="position: relative;">
     <!-- Out-of-Page Ad - Will render as overlay/interstitial -->
     <div id="div-gpt-ad-1764905652644-0"
-        style="position: fixed; top: 0; left: 0; width: 100vw; height: 100%; z-index: 9999;">
+        style="position: fixed; top: 0; left: 0; width: 100vw; height: 18vh; z-index: 9999; overflow: hidden;">
         <script>
             (function () {
                 // Ad configuration
@@ -185,10 +185,11 @@
                                     if (iframe.id && iframe.id.indexOf('google_ads_iframe_/23313062945/oop-test') !== -1) {
                                         console.log('OOP iframe detected, applying full-screen styles...');
                                         iframe.style.width = '100vw';
-                                        iframe.style.height = 'auto';
-                                        iframe.style.minHeight = '10px';
+                                        iframe.style.height = '25vh';
                                         iframe.style.border = '0px';
-                                        iframe.style.verticalAlign = 'bottom';
+                                        iframe.style.position = 'fixed';
+                                        iframe.style.top = '0';
+                                        iframe.style.verticalAlign = 'top';
                                     }
                                 });
                             }
@@ -211,10 +212,11 @@
                     if (iframe) {
                         console.log('OOP iframe found via fallback, applying full-screen styles...');
                         iframe.style.width = '100vw';
-                        iframe.style.height = 'auto';
-                        iframe.style.minHeight = '100vh';
+                        iframe.style.height = '25vh';
                         iframe.style.border = '0px';
-                        iframe.style.verticalAlign = 'bottom';
+                        iframe.style.position = 'fixed';
+                        iframe.style.top = '0';
+                        iframe.style.verticalAlign = 'top';
                     }
                 }, 2000);
             })();
