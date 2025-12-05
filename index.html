@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAM Banner Ad Implementation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .ad-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .ad-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+        }
+
+        .ad-title {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ad-title::before {
+            content: "📱";
+            font-size: 1.2em;
+        }
+
+        .ad-slot {
+            background: #f8f9fa;
+            border: 2px dashed #667eea;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            /* min-height: 280px; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* .ad-slot::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            animation: shimmer 2s infinite;
+        } */
+
+        .placeholder-text {
+            color: #999;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .info-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box h3::before {
+            content: "ℹ️";
+        }
+
+        .info-box p {
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        .code-indicator {
+            background: rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .ad-container {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>GAM Banner Ad Implementation</h1>
+            <p class="subtitle">Google Ad Manager - Banner Creative Test Page</p>
+        </div>
+
+        <div class="ad-container">
+            <div class="ad-title">Banner Ad Slot #1</div>
+
+            <!-- ========================================
+                 REPLACE THIS DIV ID WITH YOUR GAM AD SLOT
+                 ======================================== -->
+            <div class="ad-slot">
+                <!-- Ad Unit: div-gpt-ad-1764899018874-0 | Type: banner | Size: 300x90 -->
+                <div id="div-gpt-ad-1764899018874-0" style="width:100%;min-width:300px;min-height:90px;">
+                    <script>
+                        (function () {
+                            // Ad configuration
+                            var adConfig = {
+                                "type": "banner",
+                                "adUnit": "/23313062945/23326834124",
+                                "divId": "div-gpt-ad-1764899018874-0",
+                                "lazyLoad": true,
+                                "targeting": {},
+                                "sizes": [[728, 90], [300, 250]]
+                            };
+
+                            // Initialize AdNova if not loaded
+                            window.adNovaQueue = window.adNovaQueue || [];
+                            window.adNovaQueue.push(adConfig);
+
+                            // Load AdNova Loader (once per page)
+                            if (!window.adNovaLoaded) {
+                                window.adNovaLoaded = true;
+                                var script = document.createElement('script');
+                                script.src = 'https://storage.googleapis.com/venturo-adnova-staging/adserver/v1.0.0/adunit-loader.min.js';
+                                script.async = true;
+                                (document.head || document.documentElement).appendChild(script);
+                            }
+                        })();
+                    </script>
+                </div>
+                <!-- End AdNova Tag -->
+            </div>
+        </div>
+
+        <!-- <div class="info-box">
+            <h3>Petunjuk Implementasi</h3>
+            <p>
+                1. Ganti script di bagian &lt;head&gt; dengan script GAM Anda<br>
+                2. Sesuaikan ID div dengan ad unit yang Anda definisikan<br>
+                3. Pastikan ukuran banner sesuai dengan konfigurasi di GAM<br>
+                4. Test halaman ini untuk memastikan iklan muncul dengan benar
+            </p>
+        </div> -->
+    </div>
+
+    <!-- ========================================
+         REPLACE WITH YOUR GAM DISPLAY SCRIPT
+         ======================================== -->
+    <script>
+        // PASTE YOUR GAM DISPLAY SCRIPT HERE
+        // Example:
+        // googletag.cmd.push(function() { googletag.display('div-gpt-ad-banner-1'); });
+        // googletag.cmd.push(function() { googletag.display('div-gpt-ad-banner-2'); });
+    </script>
+    <!-- ======================================== -->
+
+</body>
+
+</html>
