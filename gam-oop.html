@@ -14,7 +14,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: linear-gradient(135deg, #dd3030 0%, #6b0808 100%);
             min-height: 100vh;
             padding: 40px 20px;
         }
@@ -213,90 +213,37 @@
             <p class="subtitle">Google Ad Manager - Out-of-Page Creative Test Page</p>
         </div>
 
-        <!-- <div class="content-section">
-            <div class="section-title">Jenis Out-of-Page Ads</div>
-            
-            <div class="ad-types">
-                <div class="ad-type-card">
-                    <h3>🎯 Interstitial</h3>
-                    <p>Full-screen ad yang muncul di antara konten atau saat transisi halaman</p>
-                </div>
-                
-                <div class="ad-type-card">
-                    <h3>🎁 Rewarded</h3>
-                    <p>Iklan yang memberikan reward kepada user setelah menonton atau berinteraksi</p>
-                </div>
-                
-                <div class="ad-type-card">
-                    <h3>⬇️ Anchor/Bottom</h3>
-                    <p>Iklan yang menempel di bagian bawah layar saat user scroll</p>
-                </div>
-                
-                <div class="ad-type-card">
-                    <h3>⬆️ Top Anchor</h3>
-                    <p>Iklan yang menempel di bagian atas layar</p>
-                </div>
-            </div>
 
-            <div class="code-indicator">
-                📝 Script GAM out-of-page sudah ditempatkan di bagian &lt;head&gt; halaman ini
-            </div>
-
-            <div class="warning-box">
-                <strong>Perhatian!</strong>
-                <p>Out-of-page ads akan muncul secara otomatis sesuai dengan konfigurasi di GAM. Tidak memerlukan div container khusus seperti banner ads. Pastikan format yang Anda pilih sesuai dengan kebijakan dan user experience website Anda.</p>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <div class="section-title">Konten Demo Halaman</div>
-            
-            <div class="demo-content">
-                <h2>Selamat Datang di Halaman Test Out-of-Page Ads</h2>
-                <p>
-                    Halaman ini dirancang untuk menguji implementasi out-of-page ads dari Google Ad Manager. 
-                    Out-of-page ads berbeda dengan banner ads karena tidak memerlukan container div khusus 
-                    dan akan muncul secara overlay atau di posisi khusus sesuai dengan format yang dipilih.
-                </p>
-                <p>
-                    Scroll halaman ini atau lakukan interaksi untuk melihat bagaimana out-of-page ads 
-                    ditampilkan. Tergantung pada konfigurasi Anda, iklan mungkin muncul sebagai:
-                </p>
-                <ul style="margin-left: 20px; color: #666; line-height: 1.8;">
-                    <li>Interstitial yang muncul saat page load atau navigasi</li>
-                    <li>Rewarded ads yang dapat dipicu oleh user action</li>
-                    <li>Anchor ads yang menempel di bagian atas atau bawah viewport</li>
-                    <li>Format out-of-page lainnya sesuai konfigurasi GAM</li>
-                </ul>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-                <p>
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-                    culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </div>
-
-            <div class="info-box">
-                <h3>Petunjuk Implementasi</h3>
-                <ul>
-                    <li>Ganti script di bagian &lt;head&gt; dengan script GAM out-of-page Anda</li>
-                    <li>Pilih format out-of-page yang sesuai (INTERSTITIAL, REWARDED, BOTTOM_ANCHOR, dll)</li>
-                    <li>Tidak perlu menambahkan div container seperti banner ads</li>
-                    <li>Test halaman untuk memastikan iklan muncul sesuai dengan timing dan format yang diinginkan</li>
-                    <li>Perhatikan user experience - jangan terlalu agresif dengan frekuensi tampilan</li>
-                </ul>
-            </div>
-        </div> -->
-
-        <!-- ========================================
-             OUT-OF-PAGE ADS WILL APPEAR AUTOMATICALLY
-             NO NEED FOR DISPLAY DIV LIKE BANNER ADS
-             ======================================== -->
     </div>
+    <!-- Ad Unit: div-gpt-ad-1764905652644-0 | Type: out-of-page -->
+    <div id="div-gpt-ad-1764905652644-0">
+        <script>
+            (function () {
+                // Ad configuration
+                var adConfig = {
+                    "type": "out-of-page",
+                    "adUnit": "/23313062945/oop-test",
+                    "divId": "div-gpt-ad-1764905652644-0",
+                    "lazyLoad": true,
+                    "targeting": {}
+                };
+
+                // Initialize AdNova if not loaded
+                window.adNovaQueue = window.adNovaQueue || [];
+                window.adNovaQueue.push(adConfig);
+
+                // Load AdNova Loader (once per page)
+                if (!window.adNovaLoaded) {
+                    window.adNovaLoaded = true;
+                    var script = document.createElement('script');
+                    script.src = 'https://storage.googleapis.com/venturo-adnova-staging/adserver/v1.0.0/adunit-loader.min.js';
+                    script.async = true;
+                    (document.head || document.documentElement).appendChild(script);
+                }
+            })();
+        </script>
+    </div>
+    <!-- End AdNova Tag -->
 
     <!-- ========================================
          OPTIONAL: CUSTOM TRIGGER SCRIPT
