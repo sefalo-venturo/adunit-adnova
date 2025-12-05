@@ -81,24 +81,12 @@
             border-radius: 12px;
             padding: 20px;
             text-align: center;
-            /* min-height: 280px; */
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
         }
-
-        /* .ad-slot::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
-            animation: shimmer 2s infinite;
-        } */
 
         .placeholder-text {
             color: #999;
@@ -156,7 +144,9 @@
 </head>
 
 <body>
-    <div id="div-gpt-ad-1764905652644-0">
+    <!-- Out-of-Page Ad - Will render as overlay/interstitial -->
+    <div id="div-gpt-ad-1764905652644-0"
+        style="position: fixed; top: 0; left: 0; width: 100vw; height: 100%; z-index: 9999;">
         <script>
             (function () {
                 // Ad configuration
@@ -164,7 +154,7 @@
                     "type": "out-of-page",
                     "adUnit": "/23313062945/oop-test",
                     "divId": "div-gpt-ad-1764905652644-0",
-                    "lazyLoad": true,
+                    "lazyLoad": false,
                     "targeting": {}
                 };
 
@@ -180,9 +170,57 @@
                     script.async = true;
                     (document.head || document.documentElement).appendChild(script);
                 }
+
+                // Auto-resize OOP iframe to full screen when loaded
+                var observer = new MutationObserver(function (mutations) {
+                    mutations.forEach(function (mutation) {
+                        mutation.addedNodes.forEach(function (node) {
+                            if (node.nodeType === 1) {
+                                var iframes = node.querySelectorAll ? node.querySelectorAll('iframe') : [];
+                                if (node.tagName === 'IFRAME') {
+                                    iframes = [node];
+                                }
+
+                                iframes.forEach(function (iframe) {
+                                    if (iframe.id && iframe.id.indexOf('google_ads_iframe_/23313062945/oop-test') !== -1) {
+                                        console.log('OOP iframe detected, applying full-screen styles...');
+                                        iframe.style.width = '100vw';
+                                        iframe.style.height = 'auto';
+                                        iframe.style.minHeight = '10px';
+                                        iframe.style.border = '0px';
+                                        iframe.style.verticalAlign = 'bottom';
+                                    }
+                                });
+                            }
+                        });
+                    });
+                });
+
+                // Start observing
+                var targetNode = document.getElementById('div-gpt-ad-1764905652644-0');
+                if (targetNode) {
+                    observer.observe(targetNode, {
+                        childList: true,
+                        subtree: true
+                    });
+                }
+
+                // Fallback: try to resize after delay
+                setTimeout(function () {
+                    var iframe = document.querySelector('iframe[id*="google_ads_iframe_/23313062945/oop-test"]');
+                    if (iframe) {
+                        console.log('OOP iframe found via fallback, applying full-screen styles...');
+                        iframe.style.width = '100vw';
+                        iframe.style.height = 'auto';
+                        iframe.style.minHeight = '100vh';
+                        iframe.style.border = '0px';
+                        iframe.style.verticalAlign = 'bottom';
+                    }
+                }, 2000);
             })();
         </script>
     </div>
+
     <div class="container">
         <div class="header">
             <h1>GAM Banner Ad Implementation</h1>
@@ -192,9 +230,6 @@
         <div class="ad-container">
             <div class="ad-title">Banner Ad Slot #1</div>
 
-            <!-- ========================================
-                 REPLACE THIS DIV ID WITH YOUR GAM AD SLOT
-                 ======================================== -->
             <div class="ad-slot">
                 <!-- Ad Unit: div-gpt-ad-1764899018874-0 | Type: banner | Size: 300x90 -->
                 <div id="div-gpt-ad-1764899018874-0" style="width:100%;min-width:300px;min-height:90px;">
@@ -220,27 +255,15 @@
             </div>
         </div>
 
-        <!-- <div class="info-box">
-            <h3>Petunjuk Implementasi</h3>
+        <div class="info-box">
+            <h3>Informasi OOP Ad</h3>
             <p>
-                1. Ganti script di bagian &lt;head&gt; dengan script GAM Anda<br>
-                2. Sesuaikan ID div dengan ad unit yang Anda definisikan<br>
-                3. Pastikan ukuran banner sesuai dengan konfigurasi di GAM<br>
-                4. Test halaman ini untuk memastikan iklan muncul dengan benar
+                Out-of-Page ad akan otomatis di-resize ke full screen oleh JavaScript. Script akan mendeteksi saat
+                iframe GAM muncul dan langsung mengubah ukurannya menjadi 100vw x 100vh. Cek console browser untuk log
+                debugging.
             </p>
-        </div> -->
+        </div>
     </div>
-
-    <!-- ========================================
-         REPLACE WITH YOUR GAM DISPLAY SCRIPT
-         ======================================== -->
-    <script>
-        // PASTE YOUR GAM DISPLAY SCRIPT HERE
-        // Example:
-        // googletag.cmd.push(function() { googletag.display('div-gpt-ad-banner-1'); });
-        // googletag.cmd.push(function() { googletag.display('div-gpt-ad-banner-2'); });
-    </script>
-    <!-- ======================================== -->
 
 </body>
 
